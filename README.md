@@ -12,17 +12,17 @@
 ## How to run Gemini AI Scripts
 1. install all required packages: pip3 install google-genai opencv-python pyserial pydobot pupil-apriltags
 2. Generate Gemini API key using the link: https://aistudio.google.com/app/apikey
-        - Sign in to your google account and then click the “Generate API Key” button (Top right of the screen)
+        1. Sign in to your google account and then click the “Generate API Key” button (Top right of the screen)
 
-3. Paste your API key in as a global variable: export GEMINI_API_KEY="PASTE_KEY_HERE”
-        - example: export GEMINI_API_KEY="AIzaSyDK39f…abcd”
+4. Paste your API key in as a global variable: export GEMINI_API_KEY="PASTE_KEY_HERE”
+        5. example: export GEMINI_API_KEY="AIzaSyDK39f…abcd”
 
 Step 4: run test command: python3 -c "from google import genai; client = genai.Client(); print(client.models.generate_content(model='gemini-2.0-flash', contents='Hello').text)" 
-        - should say Gemini is working 
+        1. should say Gemini is working 
 
 Step 5: Run test script “dobot_gemini_text.py” (using text, no webcam): python3 dobot_gemini_text.py
-        - Asks for command, example: pick the yellow block (it is designed to go to specific locations for yellow/blue/green/red blocks
-        - This goes to predefined coordinates for V1
+        1. Asks for command, example: pick the yellow block (it is designed to go to specific locations for yellow/blue/green/red blocks
+        2. This goes to predefined coordinates for V1
 
 ## Scripts Included
 1. dobot_test.py: This is a very basic script to test small movement (only one or two moves for the robot)
