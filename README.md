@@ -9,6 +9,10 @@
 2. source ~/dobot-venv/bin/activate (THIS IS IMPORTANT AND MUST BE RAN EVERY SESSION (Only run once) BEFORE ANY SCRIPTS)
 3. python3 ~/dobot_gui.py (use whatever script file name here)
 
+## How to run Gemini AI Scripts
+1. install all required packages: pip3 install google-genai opencv-python pyserial pydobot pupil-apriltags
+2. Generate Gemini API key using the link:
+
 ## Scripts Included
 1. dobot_test.py: This is a very basic script to test small movement (only one or two moves for the robot)
 2. dobot_loop.py: This loops what dobot_test.py does
