@@ -17,7 +17,7 @@
 3. Paste your API key in as a global variable: export GEMINI_API_KEY="PASTE_KEY_HERE”
         - example: export GEMINI_API_KEY="AIzaSyDK39f…abcd”
 
-Step 4: run test command: 
+Step 4: run test command: python3 -c "from google import genai; client = genai.Client(); print(client.models.generate_content(model='gemini-2.0-flash', contents='Hello').text)" 
         - should say Gemini is working 
 
 Step 5: Run test script “dobot_gemini_text.py” (using text, no webcam): python3 dobot_gemini_text.py
