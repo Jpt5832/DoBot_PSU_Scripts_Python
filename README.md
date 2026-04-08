@@ -27,11 +27,20 @@ python3 dobot_gui.py
 
 Replace dobot_gui.py with any script name as needed.
 
+4. ⚠️ NOTICE/IMPORTANT: You may have to change the PORT variable within the scripts for DoBot depending on which USB port the robot is connected to
+Find what USB port the DoBot could be connected to (run one, or both ls commands):
+- ls /dev/ttyUSB*
+- ls /dev/ttyACM*
+Once you found the port (one of the ls commands should output something like /dev/ttyACM0 or /dev/ttyUSB0), then:
+- nano {script_name}.py
+Copy/Paste the port in the PORT variable
+- Example: PORT = "/dev/ttyACM0"
+
 ---
 
 ## Running Gemini AI Scripts
 
-### 1. Install Required Packages
+### 1. Install Required Packages (if not already installed)
 pip install google-genai opencv-python pyserial pydobot pupil-apriltags
 
 ---
@@ -98,16 +107,16 @@ Note: This version uses predefined positions (V1 implementation).
 
 ### AI + Gemini Integration
 - **dobot_gemini_text_controller.py**  
-  Integrates Google Gemini AI to interpret natural language commands (e.g., “pick up the yellow block”) and convert them into robot movements.
+  Integrates Google Gemini AI to interpret natural language commands (e.g., “move to the right by a little”) and convert them into robot movements.
 
 - **dobot_gemini_webcam_colorblocks.py**  
-  Uses a webcam along with Gemini AI and computer vision to detect colored blocks and move the robot to the correct position.
+  Uses a webcam along with Gemini AI and computer vision to detect colored blocks and move the robot to the correct position. (Not complete as of right now)
 
 ---
 
 ### Computer Vision & Detection
 - **dobot_detect_block_location.py**  
-  Detects block positions in the workspace and converts them into usable coordinates for the robot.
+  Detects block positions in the workspace and converts them into usable coordinates for the robot. (Coordinates aren't 100% stable)
 
 - **block_on_paper.py**  
   Detects a single block placed on a defined surface (paper) and determines its position.
@@ -116,7 +125,7 @@ Note: This version uses predefined positions (V1 implementation).
   Extends block detection to handle multiple objects in the workspace.
 
 - **webcam_test.py**  
-  Tests webcam functionality and ensures video feed is working for vision-based scripts.
+  Tests webcam functionality and ensures video feed is working for vision-based scripts/generates test jpg file.
 
 ---
 
@@ -131,10 +140,10 @@ Note: This version uses predefined positions (V1 implementation).
 
 ### Calibration & Positioning
 - **dobot_corner_calibration.py**  
-  Calibrates workspace boundaries (corners) to map camera coordinates to robot coordinates.
+  Calibrates workspace boundaries (corners) to map camera coordinates to robot coordinates. (Still a WIP)
 
 - **quickcal.py**  
-  Quick calibration utility for rapidly setting reference positions.
+  Quick calibration utility for rapidly setting reference positions. (NOT USED)
 
 ---
 
