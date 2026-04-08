@@ -1,35 +1,103 @@
 # DoBot Magician Python Scripts (Linux)
 
-## How to Install (CLI)
-1. git clone https://github.com/Jpt5832/DoBot_PSU_Scripts_Python.git
-2. cd ~/DoBot_PSU_Scripts_Python
+## Overview
+This repository contains Python scripts for controlling the DoBot Magician robotic arm on a Linux system. It includes both manual control scripts and AI-powered functionality using Google Gemini.
 
-## How to run Scripts
-1. cd ~/DoBot_PSU_Scripts_Python
-2. source ~/dobot-venv/bin/activate (THIS IS IMPORTANT AND MUST BE RAN EVERY SESSION (Only run once) BEFORE ANY SCRIPTS)
-3. python3 ~/dobot_gui.py (use whatever script file name here)
+---
 
-## How to run Gemini AI Scripts
-1. install all required packages: pip3 install google-genai opencv-python pyserial pydobot pupil-apriltags
-2. Generate Gemini API key using the link: https://aistudio.google.com/app/apikey
-        1. Sign in to your google account and then click the “Generate API Key” button (Top right of the screen)
+## Installation (CLI)
 
-4. Paste your API key in as a global variable: export GEMINI_API_KEY="PASTE_KEY_HERE”
-        5. example: export GEMINI_API_KEY="AIzaSyDK39f…abcd”
+git clone https://github.com/Jpt5832/DoBot_PSU_Scripts_Python.git
+cd ~/DoBot_PSU_Scripts_Python
 
-Step 4: run test command: python3 -c "from google import genai; client = genai.Client(); print(client.models.generate_content(model='gemini-2.0-flash', contents='Say exactly: Gemini is working').text)" 
-        1. should say Gemini is working 
+---
 
-Step 5: Run test script “dobot_gemini_text.py” (using text, no webcam): python3 dobot_gemini_text.py
-        1. Asks for command, example: pick the yellow block (it is designed to go to specific locations for yellow/blue/green/red blocks
-        2. This goes to predefined coordinates for V1
+## Running Scripts
+
+1. Navigate to the project directory:
+cd ~/DoBot_PSU_Scripts_Python
+
+2. Activate the virtual environment:
+source ~/dobot-venv/bin/activate
+
+⚠️ IMPORTANT: This must be run once per session before running any scripts.
+
+3. Run a script:
+python3 dobot_gui.py
+
+Replace dobot_gui.py with any script name as needed.
+
+---
+
+## Running Gemini AI Scripts
+
+### 1. Install Required Packages
+pip install google-genai opencv-python pyserial pydobot pupil-apriltags
+
+---
+
+### 2. Generate a Gemini API Key
+Go to: https://aistudio.google.com/app/apikey  
+Sign in with your Google account  
+Click "Generate API Key" (top-right corner)
+
+---
+
+### 3. Set API Key (Environment Variable)
+
+export GEMINI_API_KEY="PASTE_KEY_HERE"
+
+Example:
+export GEMINI_API_KEY="AIzaSyDK39f...abcd"
+
+⚠️ IMPORTANT: This must be set every session (especially on public/shared machines).
+
+---
+
+### 4. Test Gemini Connection
+
+python3 -c "from google import genai; client = genai.Client(); print(client.models.generate_content(model='gemini-2.0-flash', contents='Say exactly: Gemini is working').text)"
+
+Expected output:
+Gemini is working
+
+---
+
+### 5. Run Gemini Test Script
+
+python3 dobot_gemini_text.py
+
+- The script will prompt for a command  
+- Example input: pick the yellow block  
+- The robot will move to predefined coordinates for:
+  - Yellow
+  - Blue
+  - Green
+  - Red blocks  
+
+Note: This version uses predefined positions (V1 implementation).
+
+---
 
 ## Scripts Included
-1. dobot_test.py: This is a very basic script to test small movement (only one or two moves for the robot)
-2. dobot_loop.py: This loops what dobot_test.py does
-3. dobot_keyboard.py: This script allows the user to control the robot via the keyboard (main keys are WASD, others: R,E,F,Z)
-4. dobot_gui.py: This scripts allows the user to manually move the robot via a GUI
+
+- dobot_test.py  
+  Basic test script for simple robot movements (1–2 actions)
+
+- dobot_loop.py  
+  Continuously loops the movements from dobot_test.py
+
+- dobot_keyboard.py  
+  Keyboard control for the robot  
+  Main keys: W, A, S, D  
+  Additional controls: R, E, F, Z
+
+- dobot_gui.py  
+  GUI-based manual control for the robot
+
+---
 
 ## Authors
-1. PSU Cybersecurity Student - Jayson Troxel
-2. PSU Cybersecurity Student - Mark Jachura
+
+- Jayson Troxel — PSU Cybersecurity Student  
+- Mark Jachura — PSU Cybersecurity Student
