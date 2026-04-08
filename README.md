@@ -7,8 +7,8 @@ This repository contains Python scripts for controlling the DoBot Magician robot
 
 ## Installation (CLI)
 
-git clone https://github.com/Jpt5832/DoBot_PSU_Scripts_Python.git
-cd ~/DoBot_PSU_Scripts_Python
+- git clone https://github.com/Jpt5832/DoBot_PSU_Scripts_Python.git
+- cd ~/DoBot_PSU_Scripts_Python
 
 ---
 
@@ -81,21 +81,66 @@ Note: This version uses predefined positions (V1 implementation).
 
 ## Scripts Included
 
-- dobot_test.py  
-  Basic test script for simple robot movements (1–2 actions)
+### Core Control Scripts
+- **dobot_test.py**  
+  Basic connection and movement test script used to verify communication with the DoBot and execute simple point-to-point movements.
 
-- dobot_loop.py  
-  Continuously loops the movements from dobot_test.py
+- **dobot_loop.py**  
+  Runs continuous movement loops for testing repeatability and motion sequences.
 
-- dobot_keyboard.py  
-  Keyboard control for the robot  
-  Main keys: W, A, S, D  
-  Additional controls: R, E, F, Z
+- **dobot_keyboard.py**  
+  Allows real-time manual control of the robot using keyboard input (WASD + additional controls for vertical movement and rotation).
 
-- dobot_gui.py  
-  GUI-based manual control for the robot
+- **dobot_gui.py**  
+  Graphical user interface (GUI) for controlling the robot arm interactively without using the terminal.
 
 ---
+
+### AI + Gemini Integration
+- **dobot_gemini_text_controller.py**  
+  Integrates Google Gemini AI to interpret natural language commands (e.g., “pick up the yellow block”) and convert them into robot movements.
+
+- **dobot_gemini_webcam_colorblocks.py**  
+  Uses a webcam along with Gemini AI and computer vision to detect colored blocks and move the robot to the correct position.
+
+---
+
+### Computer Vision & Detection
+- **dobot_detect_block_location.py**  
+  Detects block positions in the workspace and converts them into usable coordinates for the robot.
+
+- **block_on_paper.py**  
+  Detects a single block placed on a defined surface (paper) and determines its position.
+
+- **multiple_blocks_on_paper.py**  
+  Extends block detection to handle multiple objects in the workspace.
+
+- **webcam_test.py**  
+  Tests webcam functionality and ensures video feed is working for vision-based scripts.
+
+---
+
+### AprilTag Integration
+- **aprilTags_ID_Detector.py**  
+  Detects AprilTags and identifies their IDs to assist with spatial positioning and tracking.
+
+- **aprilTags_test.py**  
+  Test script for verifying AprilTag detection and camera calibration.
+
+---
+
+### Calibration & Positioning
+- **dobot_corner_calibration.py**  
+  Calibrates workspace boundaries (corners) to map camera coordinates to robot coordinates.
+
+- **quickcal.py**  
+  Quick calibration utility for rapidly setting reference positions.
+
+---
+
+### Miscellaneous
+- **final_test.jpg**  
+  Sample/test image used for webcam verification/image clarity.
 
 ## Authors
 
