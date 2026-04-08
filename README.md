@@ -31,9 +31,10 @@ Replace dobot_gui.py with any script name as needed.
 Find what USB port the DoBot could be connected to (run one, or both ls commands):
 - ls /dev/ttyUSB*
 - ls /dev/ttyACM*
+
 Once you found the port (one of the ls commands should output something like /dev/ttyACM0 or /dev/ttyUSB0), then:
-- nano {script_name}.py
-Copy/Paste the port in the PORT variable
+1. nano {script_name}.py
+2. Copy/Paste the port in the PORT variable
 - Example: PORT = "/dev/ttyACM0"
 
 ---
