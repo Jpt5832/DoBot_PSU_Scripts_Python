@@ -17,7 +17,8 @@ This repository contains Python scripts for controlling the DoBot Magician robot
 - run the command: ./dobot_startup.sh (replace name with another script if needed, example: dobot_xbox_controller_gui_startup_script.sh)
 
 ⚠️ **IMPORTANT!!!: you will need to run 'chmod 700' command to make the scripts executable!**
-- Example: chmod 700 dobot_startup.sh
+- Example: chmod 700 dobot_setup.sh
+- must be ran for every script included
 
 ---
 
