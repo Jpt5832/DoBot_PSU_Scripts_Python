@@ -27,23 +27,26 @@ This repository contains Python scripts for controlling the DoBot Magician robot
 1. Navigate to the project directory:
 cd ~/DoBot_PSU_Scripts_Python
 
-2. Activate the virtual environment: (ONLY!!! do this if you haven't run the startup script "dobot_startup.sh")
-source ~/dobot-venv/bin/activate
+2. Activate the virtual environment: (ONLY!!! do this if you haven't run the setup script "dobot_setup.sh")
+- source ~/dobot-venv/bin/activate
 
-⚠️ IMPORTANT: This must be run once per session before running any scripts.
+⚠️ IMPORTANT: This must be run once per session before running any programs.
 
-3. Run a Program:
+3. Install Required Packages (if not already installed)
+- pip install google-genai opencv-python pyserial pydobot pupil-apriltags pygame
+
+4. Run a Program:
 python3 dobot_gui.py
 
 Replace dobot_gui.py with any program name as needed.
 
-4. ⚠️ NOTICE/IMPORTANT: You may have to change the PORT variable within the programs for DoBot depending on which USB port the robot is connected to
+5. ⚠️ NOTICE/IMPORTANT: You may have to change the PORT variable within the programs for DoBot depending on which USB port the robot is connected to
 Find what USB port the DoBot could be connected to (run one, or both ls commands):
 - ls /dev/ttyUSB*
 - ls /dev/ttyACM*
 
 Once you found the port (one of the ls commands should output something like /dev/ttyACM0 or /dev/ttyUSB0), then:
-1. nano {script_name}.py
+1. nano {program_name}.py
 2. Copy/Paste the port in the PORT variable
 - Example: PORT = "/dev/ttyACM0"
 
