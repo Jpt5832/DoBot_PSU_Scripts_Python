@@ -11,23 +11,29 @@ This repository contains Python scripts for controlling the DoBot Magician robot
 - cd ~/DoBot_PSU_Scripts_Python
 
 ---
+## Startup Scripts
+- clone repository
+- cd ~/DoBot_PSU_Scripts_Python (or wherever location you have the repository stored in)
+- run the command: ./dobot_startup.sh (replace name with another script if needed, example: dobot_xbox_controller_gui_startup_script.sh)
 
-## Running Scripts
+---
+
+## Running Python3 DoBot Programs
 
 1. Navigate to the project directory:
 cd ~/DoBot_PSU_Scripts_Python
 
-2. Activate the virtual environment:
+2. Activate the virtual environment: (ONLY!!! do this if you haven't run the startup script "dobot_startup.sh")
 source ~/dobot-venv/bin/activate
 
 ⚠️ IMPORTANT: This must be run once per session before running any scripts.
 
-3. Run a script:
+3. Run a Program:
 python3 dobot_gui.py
 
-Replace dobot_gui.py with any script name as needed.
+Replace dobot_gui.py with any program name as needed.
 
-4. ⚠️ NOTICE/IMPORTANT: You may have to change the PORT variable within the scripts for DoBot depending on which USB port the robot is connected to
+4. ⚠️ NOTICE/IMPORTANT: You may have to change the PORT variable within the programs for DoBot depending on which USB port the robot is connected to
 Find what USB port the DoBot could be connected to (run one, or both ls commands):
 - ls /dev/ttyUSB*
 - ls /dev/ttyACM*
@@ -39,7 +45,7 @@ Once you found the port (one of the ls commands should output something like /de
 
 ---
 
-## Running Gemini AI Scripts
+## Running Gemini AI Programs
 
 ### 1. Install Required Packages (if not already installed)
 pip install google-genai opencv-python pyserial pydobot pupil-apriltags
@@ -73,7 +79,7 @@ Gemini is working
 
 ---
 
-### 5. Run Gemini Test Script
+### 5. Run Gemini Test Program
 
 python3 dobot_gemini_text.py
 
@@ -89,7 +95,14 @@ Note: This version uses predefined positions (V1 implementation).
 
 ---
 
-## Scripts Included
+## Programs/Scripts Included
+
+### Startup Scripts (basically plug-and-play)
+- dobot_startup.sh
+  This startup script will do all the DoBot startup for you so activate the virtual environment
+
+- dobot_xbox_controller_gui_startup_script.sh
+  This script does the same functionality as the dobot_startup, however it also starts the dobot_xbox_control.py program
 
 ### Core Control Scripts
 - **dobot_test.py**  
@@ -103,6 +116,9 @@ Note: This version uses predefined positions (V1 implementation).
 
 - **dobot_gui.py**  
   Graphical user interface (GUI) for controlling the robot arm interactively without using the terminal.
+
+- **dobot_xbox_control.py**
+  Combines graphical user interface program with adding functionality to use an xbox controller to control the dobot. Users could use either or both methods within the program to move the dobot!
 
 ---
 
