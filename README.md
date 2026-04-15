@@ -119,7 +119,7 @@ Note: This version uses predefined positions (V1 implementation).
   Graphical user interface (GUI) for controlling the robot arm interactively without using the terminal.
 
 - **dobot_xbox_control.py**
-  Combines graphical user interface program with adding functionality to use an xbox controller to control the dobot. Users could use either or both methods within the program to move the dobot!
+  - Combines graphical user interface program with adding functionality to use an xbox controller to control the dobot. Users could use either or both methods within the program to move the dobot!
 
 ---
 
