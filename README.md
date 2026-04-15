@@ -48,7 +48,7 @@ Once you found the port (one of the ls commands should output something like /de
 ## Running Gemini AI Programs
 
 ### 1. Install Required Packages (if not already installed)
-pip install google-genai opencv-python pyserial pydobot pupil-apriltags
+pip install google-genai opencv-python pyserial pydobot pupil-apriltags pygame
 
 ---
 
@@ -98,8 +98,8 @@ Note: This version uses predefined positions (V1 implementation).
 ## Programs/Scripts Included
 
 ### Startup Scripts (basically plug-and-play)
-- **dobot_startup.sh**
-  This startup script will do all the DoBot startup for you so activate the virtual environment
+- **dobot_startup_script.sh**
+  This startup script will do all the DoBot startup for you so activate the virtual environment and install required packages for you (if needed)
 
 - **dobot_xbox_controller_gui_startup_script.sh**
   This script does the same functionality as the dobot_startup, however it also starts the dobot_xbox_control.py program
