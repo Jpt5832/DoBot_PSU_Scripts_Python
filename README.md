@@ -16,6 +16,9 @@ This repository contains Python scripts for controlling the DoBot Magician robot
 - cd ~/DoBot_PSU_Scripts_Python (or wherever location you have the repository stored in)
 - run the command: ./dobot_startup.sh (replace name with another script if needed, example: dobot_xbox_controller_gui_startup_script.sh)
 
+⚠️ **IMPORTANT!!!: you will need to run 'chmod 700' command to make the scripts executable!**
+- Example: chmod 700 dobot_startup.sh
+
 ---
 
 ## Running Python3 DoBot Programs
@@ -98,11 +101,14 @@ Note: This version uses predefined positions (V1 implementation).
 ## Programs/Scripts Included
 
 ### Startup Scripts (basically plug-and-play)
-- **dobot_startup_script.sh**
-  - This startup script will do all the DoBot startup for you so activate the virtual environment and install required packages for you (if needed)
+- **dobot_first_time_setup.sh**
+  - This startup script will do all the initial DoBot setup for you so check if dialout group is already on the lab computer, attempt to add user to the dialout group (important!), check if the virtual environment is already created, if not, it will create AND activate that virtual environment, upgrade pip and install all the necessary packages to run everything included in this repository!
+  
+- **dobot_setup.sh**
+  - This startup script will do all the DoBot startup for you aka activate the virtual environment
 
-- **dobot_xbox_controller_gui_startup_script.sh**
-  - This script does the same functionality as the dobot_startup, however it also starts the dobot_xbox_control.py program
+- **xbox_controller_gui_startup_script.sh**
+  - This script does the same functionality as the dobot_setup.sh, however it also starts the dobot_xbox_control.py program for you atuomatically
   
 
 ### Core Control Scripts
