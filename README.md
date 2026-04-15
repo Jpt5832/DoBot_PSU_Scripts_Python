@@ -99,10 +99,10 @@ Note: This version uses predefined positions (V1 implementation).
 
 ### Startup Scripts (basically plug-and-play)
 - **dobot_startup_script.sh**
-  This startup script will do all the DoBot startup for you so activate the virtual environment and install required packages for you (if needed)
+  - This startup script will do all the DoBot startup for you so activate the virtual environment and install required packages for you (if needed)
 
 - **dobot_xbox_controller_gui_startup_script.sh**
-  This script does the same functionality as the dobot_startup, however it also starts the dobot_xbox_control.py program
+  - This script does the same functionality as the dobot_startup, however it also starts the dobot_xbox_control.py program
   
 
 ### Core Control Scripts
